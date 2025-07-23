@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
+import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
 class Login extends StatefulWidget {
@@ -30,6 +31,10 @@ class _LoginState extends State<Login> {
 
             },
             title: 'Login',
+            ),
+            SizedBox(height: 20),
+            CustomTextField(
+              hinText: 'Enter your email',
             )
           ],
           
