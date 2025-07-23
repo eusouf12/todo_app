@@ -54,7 +54,7 @@ class _EmailVerifyState extends State<EmailVerify> {
              SizedBox(height: 60),
               CustomBtn(
                 onTap: () {
-                  Navigator.pushNamed(context, '/otpverify');
+                  Navigator.pushNamed(context,'/otpverify');
                 },
                 title: 'Send OTP',
                 titleColor: Colors.white,

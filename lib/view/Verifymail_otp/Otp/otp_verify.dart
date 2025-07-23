@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
-import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
+import 'package:my_task/view/Verifymail_otp/Otp/OtpField/otp_field.dart';
 
 class OtpVerify extends StatefulWidget {
   const OtpVerify({super.key});
@@ -19,7 +19,7 @@ class _OtpVerifyState extends State<OtpVerify> {
         child: Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CustomText(
                 text: '6-digit code',
@@ -36,11 +36,8 @@ class _OtpVerifyState extends State<OtpVerify> {
                 bottom: 23,
               ),
 
-              CustomTextField(
-                hinText: 'kristin.cooper@gmail.com',
-                formFieldValidator: (a) =>
-                    a.isEmpty ? 'Enter Your Email' : null,
-              ),
+              OtpField(),
+
              SizedBox(height: 38),
               CustomBtn(
                 onTap: () {
