@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(    
        body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
          child: Column(
            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,10 +80,10 @@ class _LoginState extends State<Login> {
                       });
                       },
                       side: const BorderSide(
-                      color: Color(0xFF84C000), 
+                      color: Color(0xFF4CAF50), 
                       width: 2,
                       ),
-                      activeColor: Color(0xFF84C000),
+                      activeColor: Color(0xFF4CAF50),
                     ),
                     CustomText(
                       text: 'Remember me',

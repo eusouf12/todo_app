@@ -6,8 +6,8 @@ static void _defaultOnTap() {}
 
   const CustomTextField({
     super.key,
-    this.height = 48,
-    this.borderRadius = 5,
+    this.height = 44,
+    this.borderRadius = 6,
     this.focusNode,
     this.suffixIcon,
     this.suffixIconColor,
@@ -17,7 +17,7 @@ static void _defaultOnTap() {}
     this.labelText ,
     this.textAlign = TextAlign.start,
     this.focusBorderColor,
-    this.fillColor = Colors.transparent,
+    this.fillColor = const Color(0xFFF7FFEF),
     this.borderColor,
     this.cursorColor = Colors.grey,
     this.readOnly = false,
@@ -34,8 +34,8 @@ static void _defaultOnTap() {}
     this.onChanged,
     this.formFieldValidator,
     this.onTapClick = _defaultOnTap,
-    this.elevation=1,
-    this.shadowColor= Colors.grey,
+    this.elevation=0,
+    this.shadowColor = const Color.fromARGB(255, 214, 211, 211),
   });
 
 
@@ -81,7 +81,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
     @override
     Widget build(BuildContext context) {
       return  Container(
-        padding: EdgeInsets.all(0),
+           height: widget.height,
+    decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          color: widget.shadowColor,   // Color(0x1A000000)
+          offset: Offset(1, 1),
+          blurRadius: 24,
+          spreadRadius: 0,
+        ),
+      ],
+      borderRadius: BorderRadius.circular(widget.borderRadius),
+    ),
         child: Material(
           elevation: widget.elevation,
           shadowColor: widget.shadowColor,
@@ -163,6 +174,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
 
           ),
+      
         );
     }
   }
