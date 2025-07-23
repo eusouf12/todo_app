@@ -9,7 +9,7 @@ class CustomBtn extends StatelessWidget {
     this.height = 48,
     this.width = double.maxFinite,
     this.titleColor = Colors.black,
-    this.backGroundColor= Colors.blue,
+    this.backGroundColor= const Color(0xFF84C000),
     this.marginHorizontal = 0,
     this.marginVertical = 0,
     this.fillColor = Colors.transparent,

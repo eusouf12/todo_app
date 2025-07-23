@@ -34,7 +34,7 @@ static void _defaultOnTap() {}
     this.onChanged,
     this.formFieldValidator,
     this.onTapClick = _defaultOnTap,
-    this.elevation=10,
+    this.elevation=1,
     this.shadowColor= Colors.grey,
   });
 
@@ -149,13 +149,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
                   borderSide:
-                  BorderSide(color: widget.focusBorderColor ??Colors.greenAccent,width:1),
+                  BorderSide(color: widget.focusBorderColor ??Colors.grey,width:1),
                   gapPadding: 0
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(widget.borderRadius),
                   borderSide:
-                  BorderSide(color: widget.borderColor ?? Colors.grey, width: 1),
+                    BorderSide.none,
                   gapPadding: 0
                 ),
               )
