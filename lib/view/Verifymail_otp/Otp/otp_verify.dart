@@ -33,25 +33,15 @@ class _OtpVerifyState extends State<OtpVerify> {
                 text:"Please enter the code we've sent to michelle.rivera@example.com",
                 textAlign: TextAlign.start,
                 top: 8,
-                bottom: 16,
+                bottom: 23,
               ),
-          
-              // Email
-              CustomText(
-                text: 'Email Address',
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                lineHeight: 20,
-                color: Colors.black,
-                top: 8,
-                bottom: 6,
-              ),
+
               CustomTextField(
                 hinText: 'kristin.cooper@gmail.com',
                 formFieldValidator: (a) =>
                     a.isEmpty ? 'Enter Your Email' : null,
               ),
-             SizedBox(height: 60),
+             SizedBox(height: 38),
               CustomBtn(
                 onTap: () {
                   Navigator.pushNamed(context, '/setpassword');

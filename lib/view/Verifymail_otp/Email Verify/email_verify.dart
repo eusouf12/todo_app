@@ -47,7 +47,7 @@ class _EmailVerifyState extends State<EmailVerify> {
                 bottom: 6,
               ),
               CustomTextField(
-                hinText: 'kristin.cooper@gmail.com',
+                hinText: 'michelle.rivera@example.com',
                 formFieldValidator: (a) =>
                     a.isEmpty ? 'Enter Your Email' : null,
               ),
