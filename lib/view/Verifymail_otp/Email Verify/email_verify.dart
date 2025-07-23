@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class EmailVerify extendsStatefulWidget {
+class EmailVerify extends StatefulWidget {
   const EmailVerify({super.key});
 
   @override
