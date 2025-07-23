@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
+import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -15,7 +17,25 @@ class _LoginState extends State<Login> {
         title: const Text('Login Page'),
       ),
       body: Center(
-        child: Text('Welcome to the Login'),
+        child: Column(
+          children: [
+             CustomText(
+            text: 'Welcome to the Login Page',
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            textAlign: TextAlign.center,
+          ),
+          CustomBtn(
+            onTap: (){
+
+            },
+            title: 'Login',
+            )
+          ],
+          
+        ),
+        
+        
       ),
     );
   }
