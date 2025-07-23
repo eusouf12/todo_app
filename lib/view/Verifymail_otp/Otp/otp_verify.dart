@@ -19,7 +19,7 @@ class _OtpVerifyState extends State<OtpVerify> {
         child: Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomText(
                 text: '6-digit code',

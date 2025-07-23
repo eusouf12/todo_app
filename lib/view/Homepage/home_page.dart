@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
+import 'package:my_task/view/Homepage/homeScreen/home_screen.dart';
+import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,14 +11,44 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int Idx = 0;
+  final List<Widget> pages = [
+    HomeBtn(),
+    AddTask(),
+    ProfilePage()
+    ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Center(
-        child: Text('Welcome to the Home Page!'),
+      body: pages[Idx],
+
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: Idx,
+        onTap: (index) {
+          setState(() {
+            Idx = index;
+          });
+        },
+        selectedItemColor: Color(0xFF7CB350),
+        unselectedItemColor: Colors.black,
+
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home'
+            ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add), 
+            label: 'Add Task'
+            ),
+
+          BottomNavigationBarItem( 
+            icon: Icon(Icons.person),
+             label: 'Profile'
+             ),
+        ],
       ),
     );
   }
