@@ -5,7 +5,7 @@ class CustomTextField extends StatefulWidget {
 
   const CustomTextField({
     super.key,
-    this.height = 44,
+    this.height,
     this.borderRadius = 6,
     this.focusNode,
     this.suffixIcon,
@@ -22,7 +22,8 @@ class CustomTextField extends StatefulWidget {
     this.borderColor,
     this.cursorColor = Colors.grey,
     this.readOnly = false,
-    this.maxLings = 1,
+    this.maxLings =1,
+    this.minLines ,
     this.maxLength,
     this.keyboardType = TextInputType.text,
     this.showObscure = false,
@@ -36,10 +37,11 @@ class CustomTextField extends StatefulWidget {
     this.formFieldValidator,
     this.onTapClick = _defaultOnTap,
     this.elevation = 0,
+    this.contentPadding = const EdgeInsets.only(left: 6),
     this.shadowColor = const Color.fromARGB(255, 214, 211, 211),
   });
 
-  final double height;
+  final double? height;
   final double borderRadius;
   final bool showObscure;
   final Widget? suffixIcon;
@@ -55,6 +57,7 @@ class CustomTextField extends StatefulWidget {
   final Color? borderColor;
   final Color cursorColor;
   final int? maxLings;
+  final int? minLines;
   final int? maxLength;
   final TextAlign textAlign;
   final TextAlignVertical textAlignVertical;
@@ -71,6 +74,7 @@ class CustomTextField extends StatefulWidget {
   final VoidCallback onTapClick;
   final double elevation;
   final Color shadowColor;
+  final EdgeInsetsGeometry contentPadding;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -88,7 +92,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           BoxShadow(
             color: widget.shadowColor, 
             offset: Offset(1, 1),
-            blurRadius: 24,
+            blurRadius: 16,
             spreadRadius: 0,
           ),
         ],
@@ -122,7 +126,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
             filled: true,
             fillColor: widget.fillColor,
-            contentPadding: EdgeInsets.zero,
+            contentPadding: widget.contentPadding,
 
             prefixIcon: widget.prefixIcon != null
                 ? Padding(

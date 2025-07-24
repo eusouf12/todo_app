@@ -20,6 +20,7 @@ class OtpField extends StatelessWidget {
             focusBorderColor: Colors.transparent,
             hinText: '•',
             hintFontSize: 30,
+            contentPadding: EdgeInsets.zero,
             hintFontWeight: FontWeight.bold,
             keyboardType: TextInputType.number,
           ),

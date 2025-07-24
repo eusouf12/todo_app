@@ -8,7 +8,7 @@ class CustomText extends StatelessWidget {
     this.right=0,
     this.bottom=0,
     this.top=0,
-    this.textAlign = TextAlign.center,
+    this.textAlign = TextAlign.start,
     this.text='',
     this.fontSize =14,
     this.fontWeight=FontWeight.w400,
@@ -42,7 +42,6 @@ class CustomText extends StatelessWidget {
       child: Text(
         text ,
         textAlign: textAlign,
-        maxLines: maxLines,
         style: TextStyle(
           fontSize: fontSize,
           color: color,
