@@ -7,7 +7,8 @@ class OtpField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,      children: List.generate(6, (index) {
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,     
+       children: List.generate(6, (index) {
         return SizedBox(
           width: 46,
           height: 46,

@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int Idx = 0;
+  int idx = 0;
   final List<Widget> pages = [
     HomeBtn(),
     AddTask(),
@@ -21,13 +21,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[Idx],
+      body: pages[idx],
 
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: Idx,
+        currentIndex: idx,
         onTap: (index) {
           setState(() {
-            Idx = index;
+            idx = index;
           });
         },
         selectedItemColor: Color(0xFF7CB350),

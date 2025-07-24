@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_task/common%20widget/DividerOr/divider_or.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
 import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
@@ -160,7 +161,7 @@ class _SignUpState extends State<SignUp> {
                )
                 ),
                 SizedBox(height: 17),
-                Divider(),
+                DividerOr(),
                 SizedBox(height: 24),
                 RichText(
                   text: TextSpan(

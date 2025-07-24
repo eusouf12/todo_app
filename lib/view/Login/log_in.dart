@@ -51,8 +51,6 @@ class _LoginState extends State<Login> {
                 ),
                 const CustomTextField(
                   hinText: 'michelle.riverra@example.com',
-                  elevation:1,
-                  shadowColor: Colors.grey,
                 ),
 
                 //password
