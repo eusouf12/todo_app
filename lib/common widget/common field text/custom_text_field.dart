@@ -11,10 +11,10 @@ class CustomTextField extends StatefulWidget {
     this.suffixIcon,
     this.suffixIconColor,
     this.prefixIcon,
-    this.textColor,
+    this.textColor = Colors.grey,
     this.hinText,
-    this.hintFontSize,
-    this.hintFontWeight,
+    this.hintFontSize = 16,
+    this.hintFontWeight = FontWeight.w400,
     this.labelText,
     this.textAlign = TextAlign.start,
     this.focusBorderColor,
@@ -57,7 +57,7 @@ class CustomTextField extends StatefulWidget {
   final int? maxLings;
   final int? maxLength;
   final TextAlign textAlign;
-  final TextAlignVertical? textAlignVertical;
+  final TextAlignVertical textAlignVertical;
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final TextEditingController? textEditingController;
@@ -86,7 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: widget.shadowColor, // Color(0x1A000000)
+            color: widget.shadowColor, 
             offset: Offset(1, 1),
             blurRadius: 24,
             spreadRadius: 0,
@@ -103,7 +103,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
           controller: widget.textEditingController,
           textInputAction: widget.textInputAction,
           keyboardType: widget.keyboardType,
-          textAlign: TextAlign.start,
+          textAlign: widget.textAlign,
+          textAlignVertical: widget.textAlignVertical,
           readOnly: widget.readOnly,
           obscureText: widget.showObscure ? obsText : false,
           cursorColor: widget.cursorColor,
@@ -114,16 +115,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
           style: TextStyle(color: Colors.black),
           decoration: InputDecoration(
             hintText: widget.hinText,
-            hintStyle: const TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.w500,
+            hintStyle:  TextStyle(
+              color: widget.textColor ,
+              fontWeight: widget.hintFontWeight ,
+              fontSize: widget.hintFontSize,
             ),
             filled: true,
             fillColor: widget.fillColor,
+            contentPadding: EdgeInsets.zero,
 
             prefixIcon: widget.prefixIcon != null
                 ? Padding(
-                    padding: const EdgeInsetsDirectional.symmetric(
+                    padding: EdgeInsetsDirectional.symmetric(
                       horizontal: 16,
                       vertical: 14,
                     ),
