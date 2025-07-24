@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
 class TaskDetails extends StatelessWidget {
@@ -60,7 +61,7 @@ class TaskDetails extends StatelessWidget {
                       width: 24,
                       height: 24,
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 8),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,9 +85,9 @@ class TaskDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
                 Container(height: 1, color: const Color(0xFF84C000)),
-                const SizedBox(height: 16),
+                const SizedBox(height: 14),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -97,7 +98,7 @@ class TaskDetails extends StatelessWidget {
                       width: 24,
                       height: 24,
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: 8),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,6 +125,31 @@ class TaskDetails extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Container(height: 1, color: const Color(0xFF6BBA2E)),
+                SizedBox(height: 15,),
+                Row(children: [
+                  CustomBtn(onTap: (){},
+                  title: 'Delete Task',
+                  width: 102,
+                  titleColor: Colors.black,
+                  icon:Icons.delete_outline_outlined,
+                  backGroundColor: Colors.transparent,
+                  fillColor: Colors.red,
+                  fontSize: 12,
+                  ),
+                  SizedBox(width: 10,),
+                  CustomBtn(onTap: (){
+                    Navigator.pushNamed(context, '/edittask');
+                  },
+                  title: "Edit task",
+                  width: 102,
+                  icon: Icons.edit_note_outlined,
+                  backGroundColor: Colors.transparent,
+                  fillColor: Color(0xFF6BBA2E),
+                  fontSize: 12,
+                  titleColor: Colors.black,
+                  ),
+                  
+                ],)
               ],
             ),
           ),
