@@ -9,7 +9,7 @@ class CustomTextField extends StatefulWidget {
     this.borderRadius = 6,
     this.focusNode,
     this.suffixIcon,
-    this.suffixIconColor,
+    this.suffixIconColor = Colors.grey,
     this.prefixIcon,
     this.textColor = Colors.grey,
     this.hinText,
@@ -22,8 +22,8 @@ class CustomTextField extends StatefulWidget {
     this.borderColor,
     this.cursorColor = Colors.grey,
     this.readOnly = false,
-    this.maxLings =1,
-    this.minLines ,
+    this.maxLings = 1,
+    this.minLines,
     this.maxLength,
     this.keyboardType = TextInputType.text,
     this.showObscure = false,
@@ -44,7 +44,7 @@ class CustomTextField extends StatefulWidget {
   final double? height;
   final double borderRadius;
   final bool showObscure;
-  final Widget? suffixIcon;
+  final IconData? suffixIcon;
   final IconData? prefixIcon;
   final String? hinText;
   final double? hintFontSize;
@@ -90,7 +90,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: widget.shadowColor, 
+            color: widget.shadowColor,
             offset: Offset(1, 1),
             blurRadius: 16,
             spreadRadius: 0,
@@ -119,9 +119,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
           style: TextStyle(color: Colors.black),
           decoration: InputDecoration(
             hintText: widget.hinText,
-            hintStyle:  TextStyle(
-              color: widget.textColor ,
-              fontWeight: widget.hintFontWeight ,
+            hintStyle: TextStyle(
+              color: widget.textColor,
+              fontWeight: widget.hintFontWeight,
               fontSize: widget.hintFontSize,
             ),
             filled: true,
@@ -134,7 +134,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       horizontal: 16,
                       vertical: 14,
                     ),
-                    child: Icon(widget.prefixIcon, color: Colors.black26),
+                    child: Icon(
+                      widget.prefixIcon,
+                      color: widget.suffixIconColor,
+                    ),
                   )
                 : null,
 
@@ -150,16 +153,17 @@ class _CustomTextFieldState extends State<CustomTextField> {
                         horizontal: 16,
                         vertical: 14,
                       ),
-                      child: obsText
-                          ? Icon(
-                              Icons.visibility_off_outlined,
-                              color: Colors.grey,
-                            )
-                          : Icon(Icons.visibility_outlined, color: Colors.grey),
+                      child: Icon(
+                        obsText
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility_outlined,
+                        color: widget.suffixIconColor,
+                      ),
                     ),
                   )
-                : widget.suffixIcon,
-            suffixIconColor: widget.suffixIconColor,
+                : (widget.suffixIcon != null
+                      ? Icon(widget.suffixIcon, color: widget.suffixIconColor)
+                      : null),
 
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(widget.borderRadius),

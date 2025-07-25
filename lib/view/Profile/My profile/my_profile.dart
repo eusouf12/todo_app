@@ -4,7 +4,7 @@ import 'package:my_task/view/Profile/My%20profile/MyprofileTab/myprofile_tab.dar
 import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class MyProfile extends StatefulWidget {
-  const MyProfile({Key? key}) : super(key: key);
+  const MyProfile({super.key});
 
   @override
   State<MyProfile> createState() => _MyProfileState();
