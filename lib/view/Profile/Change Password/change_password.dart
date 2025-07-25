@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
+import 'package:my_task/view/Homepage/homeScreen/home_screen.dart';
 import 'package:my_task/view/Profile/Change%20Password/change_pass_tab/change_pass_tab.dart';
-import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});
@@ -13,9 +13,9 @@ class ChangePassword extends StatefulWidget {
 class _ChangePasswordState extends State<ChangePassword> {
   int idx = 2;
   final List<Widget> pages = [
-    ChangePassTab(),
+    HomeBtn(),
     AddTask(),
-    ProfilePage(),
+    ChangePassTab(),
     ];
 
   @override

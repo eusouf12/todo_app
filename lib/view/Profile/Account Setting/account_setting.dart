@@ -13,7 +13,7 @@ class AccountSetting extends StatefulWidget {
 class _AccountSettingState extends State<AccountSetting> {
   int idx = 2;
   final List<Widget> pages = [
-    HomeBtn(),
+    HomeBtn(), 
     AddTask(),
     AccountSettingTab()
     ];

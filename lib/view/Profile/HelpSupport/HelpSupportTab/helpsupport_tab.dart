@@ -9,17 +9,15 @@ class HelpsupportTab extends StatefulWidget {
 }
 
 class _HelpsupportTabState extends State<HelpsupportTab> {
-  
   @override
   Widget build(BuildContext context) {
-       
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: ListTile(
           leading: GestureDetector(
-            onTap: (){
-              Navigator.pushNamed(context,'/profilepage');
+            onTap: () {
+              Navigator.pushNamed(context, '/profilepage');
             },
             child: Container(
               width: 40,
@@ -54,6 +52,29 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
         ),
       ),
 
-      );
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomText(
+                text: 'FAQs',
+                fontSize: 14,
+                bottom: 0,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+              CustomText(
+                text: 'Need More Help?',
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

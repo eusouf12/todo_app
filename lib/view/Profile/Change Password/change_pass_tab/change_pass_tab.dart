@@ -14,12 +14,12 @@ class _ChangePassTabState extends State<ChangePassTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         automaticallyImplyLeading: false,
         title: ListTile(
           leading: GestureDetector(
-            onTap: (){
-              Navigator.pushNamed(context,'/profilepage');
+            onTap: () {
+              Navigator.pushNamed(context, '/profilepage');
             },
             child: Container(
               width: 40,
@@ -53,66 +53,67 @@ class _ChangePassTabState extends State<ChangePassTab> {
           ),
         ),
       ),
-     
-       body: Padding(
+
+      body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 20),
         child: Form(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              //old password
               CustomText(
-                text: 'Set Your New Password',
-                color: Colors.black,
+                text: 'Type Password',
+                fontSize: 14,
                 fontWeight: FontWeight.w500,
-                fontSize: 30,
-                lineHeight: 38,
+                lineHeight: 20,
+                color: Colors.black,
+                top: 16,
+                bottom: 6,
               ),
-          
+              CustomTextField(
+                hinText: 'Enter old Password',
+                isPassword: true,
+                showObscure: true,
+              ),
+
+              //New Confirm password
               CustomText(
-                text:"Create a secure password to protect your account and get started seamlessly!",
-                textAlign: TextAlign.start,
-                top: 8,
-                bottom: 16,
+                text: 'New Password',
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                lineHeight: 20,
+                color: Colors.black,
+                top: 20,
+                bottom: 6,
               ),
-          
-                //password
-                CustomText(
-                  text: 'Password',
-                 fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  lineHeight: 20,
-                  color: Colors.black,
-                  top: 16,
-                  bottom: 6,
-                ),
-                CustomTextField(
-                  hinText: 'Enter Your Password',
-                  isPassword: true,
-                  showObscure: true,
-                ),
-                
-                //confirm password
-                CustomText(
-                  text: 'Confirm Password',
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  lineHeight: 20,
-                  color: Colors.black,
-                  top: 20,
-                  bottom: 6,
-                ),
-                CustomTextField(
-                  hinText: 'Enter Your Confirm Password',
-                  isPassword: true,
-                  showObscure: true,
-                ),
-             SizedBox(height: 32),
+              CustomTextField(
+                hinText: 'Enter New Password',
+                isPassword: true,
+                showObscure: true,
+              ),
+              //New Confirm password
+              CustomText(
+                text: 'New Confirm Password',
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                lineHeight: 20,
+                color: Colors.black,
+                top: 20,
+                bottom: 6,
+              ),
+              CustomTextField(
+                hinText: 'Enter Confirm Password',
+                isPassword: true,
+                showObscure: true,
+              ),
+
+              SizedBox(height: 32),
               CustomBtn(
                 onTap: () {
-                  Navigator.pushNamed(context, '/homepage');
+                  Navigator.pushNamed(context, '/profilepage');
                 },
-                title: 'Continue',
+                title: 'Update',
                 titleColor: Colors.white,
               ),
             ],

@@ -74,7 +74,7 @@ class _ProfilePageState extends State<ProfilePage> {
               suffixIcon: Icons.arrow_forward_ios,
               focusBorderColor: Colors.transparent,
               onTapClick: () {
-                Navigator.pushNamed(context, '/termconditions');
+                Navigator.pushNamed(context,'/termconditions');
               },
             ),
              SizedBox(height: 8.5,),
@@ -90,7 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
               suffixIcon: Icons.arrow_forward_ios,
              focusBorderColor: Colors.transparent,
              onTapClick: (){
-              Navigator.pushNamed(context,'/myprofile');
+              Navigator.pushNamed(context,'/privacy');
              },
         
             ),

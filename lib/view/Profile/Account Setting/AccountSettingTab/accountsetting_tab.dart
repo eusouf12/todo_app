@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
 class AccountSettingTab extends StatefulWidget {
@@ -18,7 +19,7 @@ class _AccountSettingTabState extends State<AccountSettingTab> {
         title: ListTile(
           leading: GestureDetector(
              onTap: (){
-              Navigator.pushNamed(context,'/profilepage');
+              Navigator.pushNamed(context,'/accountsettings');
             },
             child: Container(
               width: 40,
@@ -50,6 +51,37 @@ class _AccountSettingTabState extends State<AccountSettingTab> {
             fontSize: 16,
             color: Colors.black,
           ),
+        ),
+      ),
+
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 24),
+        child: Column(
+          children: [
+            CustomTextField(
+              onTapClick: (){
+                Navigator.pushNamed(context,'/changepassword');
+              },
+              prefixIcon: Icons.lock_clock_outlined,
+              suffixIcon: Icons.arrow_forward_ios,
+              suffixIconColor: Color(0xFF6BBA2E),
+              hinText: 'Change Password',
+              textColor: Colors.black,
+              focusBorderColor: Colors.transparent,
+              readOnly: true,
+            ),
+            SizedBox(height: 8,),          
+            CustomTextField(
+              prefixIcon: Icons.person_off_outlined,
+              suffixIcon: Icons.arrow_forward_ios,
+              suffixIconColor: Colors.red,
+              hinText: 'Delete Account',
+              textColor: Colors.red,
+              readOnly: true,
+              focusBorderColor: Colors.transparent,
+            ),
+          
+          ],
         ),
       ),
 

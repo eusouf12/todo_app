@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
-class TermsConditionTab extends StatefulWidget {
-  const TermsConditionTab({super.key});
+class PrivacyTab extends StatefulWidget {
+  const PrivacyTab({super.key});
 
   @override
-  State<TermsConditionTab> createState() => _TermsConditionTabState();
+  State<PrivacyTab> createState() => _PrivacyTabState();
 }
 
-class _TermsConditionTabState extends State<TermsConditionTab> {
+class _PrivacyTabState extends State<PrivacyTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _TermsConditionTabState extends State<TermsConditionTab> {
           ),
 
           title: CustomText(
-            text: 'Terms&Condition',
+            text: 'Privacy Policy',
             fontWeight: FontWeight.w500,
             textAlign: TextAlign.center,
             fontSize: 16,
@@ -53,124 +53,131 @@ class _TermsConditionTabState extends State<TermsConditionTab> {
       ),
 
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 24),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomText(
-                text: 'Terms & Conditions',
+              const CustomText(
+                text: 'Privacy Policy',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "Welcome to the Task Manager App. By accessing or using this application, you agree to the following terms and conditions:",
+              const CustomText(
+                text:
+                    "Your privacy is important to us. This Privacy Policy outlines how the Task Manager App handles your information and protects your data.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '1. Use of the App',
+              const CustomText(
+                text: '1. Information Collection',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "This app is designed to help users create, manage, and track personal or professional tasks efficiently. By using the app, you agree to use it responsibly and only for lawful purposes.",
+              const CustomText(
+                text:
+                    "The Task Manager App may collect limited information such as your name, email address, and preferences — strictly for the purpose of enhancing your task management experience. We do not collect sensitive personal information unnecessarily.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '2. Accuracy of Information',
+              const CustomText(
+                text: '2. Local Storage',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "All tasks, notes, and other information entered by the user are stored securely. While we strive to maintain accurate task management functionality, the app is not responsible for missed deadlines, incorrect entries, or user-generated errors.",
+              const CustomText(
+                text:
+                    "Your tasks, subtasks, and user preferences are securely stored in our system or locally on your device (depending on platform settings). This data is used solely to support the app's features like scheduling, notifications, and user customization.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '3. User Responsibility',
+              const CustomText(
+                text: '3. No Tracking',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "Users are solely responsible for managing their tasks, reminders, and any personal or professional outcomes related to the completion or non-completion of tasks created within the app.",
+              const CustomText(
+                text:
+                    "We do not use third-party trackers or intrusive analytics tools to monitor your behavior. Any performance monitoring is strictly anonymized and used internally to improve the app experience.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '4. Data Collection',
+              const CustomText(
+                text: '4. Static Data Display',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "We respect your privacy. The Task Manager App may collect limited personal data (such as name, email, and usage patterns) solely for improving user experience. No data is shared with third parties without user consent.",
+              const CustomText(
+                text:
+                    "If the app integrates with external tools (e.g., calendar, cloud storage), those services are governed by their own privacy policies. We do not control or assume responsibility for their data handling practices.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '5. Limitation of Liability',
+              const CustomText(
+                text: '5. Third-Party Services',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "We are not liable for any loss of productivity, missed deadlines, or damages resulting from your use of the app. The app is a productivity tool and should be used at your discretion.",
+              const CustomText(
+                text:
+                    "We implement industry-standard measures to ensure your information is protected from unauthorized access, alteration, or misuse. This includes encryption, secure servers, and routine maintenance.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '6. Third-Party Links',
+              const CustomText(
+                text: '6. Data Security',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "If the app connects to any third-party tools (e.g., calendar, email), we are not responsible for their data policies or service availability. Use of such services is subject to their respective terms.",
+              const CustomText(
+                text:
+                    "You retain full control over your account data. You can delete or export your tasks and personal information at any time through your profile settings (if applicable).",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
 
-              CustomText(
-                text: '7. Changes to Terms',
+              const CustomText(
+                text: '7. Policy Updates',
                 fontSize: 14,
                 color: Colors.black,
                 fontWeight: FontWeight.w500,
                 bottom: 6,
               ),
-              CustomText(
-                text: "We reserve the right to update these Terms & Conditions at any time. Continued use of the app following any changes will constitute your acceptance of those revised terms.",
+              const CustomText(
+                text:
+                    "This Privacy Policy may be updated periodically. Any changes will be clearly communicated within the app. Continued use after updates indicates your acceptance of the revised policy.\n\nIf you have any questions or concerns regarding privacy, please contact us at support@taskmanagerapp.com.",
                 fontSize: 12,
                 color: Colors.black,
                 bottom: 15,
               ),
             ],
-
           ),
         ),
       ),
