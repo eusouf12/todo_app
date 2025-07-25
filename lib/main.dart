@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         '/changepassword' :(context) => const ChangePassword(),
         '/editprofile' :(context) => const EditProfile(),
         '/termconditions' :(context)=> const TermCondition(),
-        '/privacy' :(context) => const Privacy(),
+        '/privacy' :(context) => const PrivacyPage(),
         '/help': (context)=> const HelpSupport(),
 
       },

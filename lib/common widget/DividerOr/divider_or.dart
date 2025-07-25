@@ -20,6 +20,7 @@ class DividerOr extends StatelessWidget {
             style: TextStyle(
               color: Color(0xFF0A0E23),
               fontWeight: FontWeight.w600,
+              fontSize: 14
       
             ),
           ),

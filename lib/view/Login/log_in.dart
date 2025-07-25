@@ -67,40 +67,49 @@ class _LoginState extends State<Login> {
                   isPassword: true,
                   showObscure: true,
                 ),
-                SizedBox(height: 8,),
+                SizedBox(height: 4,),
                 Row(
                   children: [
-                    Checkbox(
-                      value: isChacked,
-                      onChanged: (bool? newValue) {
-                      setState(() {
-                        isChacked = newValue ?? false;
-                      });
-                      },
-                      side: const BorderSide(
-                      color: Color(0xFF4CAF50), 
-                      width: 2,
+                    Transform.scale(
+                      scale: 13.34/24,
+                      child: Checkbox(
+                        value: isChacked,
+                        onChanged: (bool? newValue) {
+                        setState(() {
+                          isChacked = newValue ?? false;
+                        });
+                        },
+                        side: const BorderSide(
+                        color: Color(0xFF4CAF50), 
+                        width: 2,
+                        ),
+                        activeColor: Color(0xFF4CAF50),
                       ),
-                      activeColor: Color(0xFF4CAF50),
                     ),
                     CustomText(
                       text: 'Remember me',
+                      fontSize: 12,
+                      top: 0,
+                      left: 0,
                     )
                   ],
                 ),
-                SizedBox(height: 17,),
+                SizedBox(height: 13,),
                 DividerOr(),
-                SizedBox(height: 24),
+                SizedBox(height: 17),
                 RichText(text: TextSpan(
                   text: ' Don\'t have an account ?   ',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
+                      
                     ),
                   children: [
                     TextSpan(
                       text: 'Sign Up',
                       style: TextStyle(
                         color:Color(0xFF84C000),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400
                       ),
                       recognizer:TapGestureRecognizer()
                         ..onTap = (){

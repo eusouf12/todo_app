@@ -17,25 +17,30 @@ class _AddTaskState extends State<AddTask> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: ListTile(
-          leading:Container(
-            width: 40,
-            height: 40,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFFF7FFEF),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 6,
-                  offset: const Offset(0, 1),
-                ),
-              ],
-            ),
-              child: Icon(
-               size:16,
-               Icons.arrow_back_ios, color: Color(0xFF6BBA2E),
+          leading:GestureDetector(
+             onTap: (){
+              Navigator.pushNamed(context,'/homepage');
+            },
+            child: Container(
+              width: 40,
+              height: 40,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xFFF7FFEF),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 6,
+                    offset: const Offset(0, 1),
+                  ),
+                ],
               ),
+                child: Icon(
+                 size:16,
+                 Icons.arrow_back_ios, color: Color(0xFF6BBA2E),
+                ),
+            ),
           ), 
          
             title: CustomText(

@@ -56,7 +56,7 @@ class _EmailVerifyState extends State<EmailVerify> {
                 onTap: () {
                   Navigator.pushNamed(context,'/otpverify');
                 },
-                title: 'Send OTP',
+                title: 'Send',
                 titleColor: Colors.white,
               ),
             ],

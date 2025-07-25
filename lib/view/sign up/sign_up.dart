@@ -141,36 +141,47 @@ class _SignUpState extends State<SignUp> {
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your Confirm Password' : null,
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: 6),
                Obx(()=>Row(
                   children: [
-                    Checkbox(
-                      value: isChecked.value,
-                        onChanged: (val) => isChecked.value = val ?? false,
-                      side: const BorderSide(
-                        color: Color(0xFF4CAF50),
-                        width: 2,
+                    Transform.scale(
+                      scale: 13.34/24.0,
+                      child: Checkbox(
+                        value: isChecked.value,
+                          onChanged: (val) => isChecked.value = val ?? false,
+                        side: const BorderSide(
+                          color: Color(0xFF4CAF50),
+                          width: 2,
+                        ),
+                        activeColor: Color(0xFF4CAF50),
+                        
                       ),
-                      activeColor: Color(0xFF4CAF50),
                     ),
                     CustomText(
                       text:
                           'I agree to the Teams & Conditions and Privacy Policy',
+                          fontSize: 12,
+                          left: 0,
+                          right: 0,
                     ),
                   ],
                )
                 ),
-                SizedBox(height: 17),
+                SizedBox(height: 13),
                 DividerOr(),
-                SizedBox(height: 24),
+                SizedBox(height: 17),
                 RichText(
                   text: TextSpan(
                     text: 'Already have an account ?   ',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
                     children: [
                       TextSpan(
                         text: 'Log In',
-                        style: TextStyle(color: Color(0xFF84C000)),
+                        style: TextStyle(
+                          color: Color(0xFF84C000),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pushNamed(context, '/');

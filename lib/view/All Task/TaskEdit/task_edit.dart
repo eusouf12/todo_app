@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
-import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
-import 'package:my_task/common%20widget/common%20text/custom_text.dart';
+import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
+import 'package:my_task/view/All%20Task/TaskEdit/task_edit_tab.dart';
+import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class TaskEdit extends StatefulWidget {
   const TaskEdit({super.key});
@@ -11,83 +11,36 @@ class TaskEdit extends StatefulWidget {
 }
 
 class _TaskEditState extends State<TaskEdit> {
+ 
+  int idx = 0;
+  final List<Widget> pages = [
+    TaskEditTab(),
+    AddTask(),
+    ProfilePage()
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: ListTile(
-          leading: Container(
-            width: 40,
-            height: 40,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFFF7FFEF),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 6,
-                  offset: const Offset(0, 1),
-                ),
-              ],
-            ),
-            child: Icon(
-              size: 16,
-              Icons.arrow_back_ios,
-              color: Color(0xFF6BBA2E),
-            ),
-          ),
-
-          title: CustomText(
-            text: 'Edit Task',
-            fontWeight: FontWeight.w500,
-            textAlign: TextAlign.center,
-            fontSize: 16,
-            color: Colors.black,
-          ),
-        ),
-      ),
      
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
-        child: Column(
-          children: [
-            CustomText(
-              text: 'Task Title',
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              lineHeight: 20,
-              color: Colors.black,
-              top: 5,
-              bottom: 6,
-            ),
-            CustomTextField(hinText: 'e.g. Design Landing Page Header'),
-          CustomText(
-            text: 'Description',
-            lineHeight: 20,
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
-            fontSize: 14,
-            top: 23,
-            bottom: 6,
-          ),
-           CustomTextField(
-            hinText: 'e.g. include logo,navigation and CTA button with brand color',
-            maxLings: 3,
-            minLines: 1,
-            hintFontSize: 16,
-            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          ),
+      body:pages[idx],
 
-          SizedBox(height: 23,),
-          CustomBtn(onTap: (){
-            Navigator.pushNamed(context,'/homepage');
-          },
-          title: 'Update Task',
-          )
-          ],
-        ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: idx,
+         onTap: (index) {
+          setState(() {
+            idx = index;
+          });
+        },
+        selectedItemColor: Color(0xFF7CB350),
+        unselectedItemColor: Colors.black,
+
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Task'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
       ),
     );
   }
