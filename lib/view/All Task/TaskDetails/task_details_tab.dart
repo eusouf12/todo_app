@@ -65,12 +65,10 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image(
-                      image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZP8pzkS8sJ7LG_ci7YKM6yBAFRbQPXxISQ&s',
-                      ),
-                      width: 24,
-                      height: 24,
+                    Icon(
+                      Icons.table_chart_outlined,
+                      size: 24,
+                      color:Color.fromARGB(255, 202, 220, 162),
                     ),
                     const SizedBox(width: 8),
                     Expanded(
@@ -97,17 +95,17 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                   ],
                 ),
                 const SizedBox(height: 14),
-                Container(height: 1, color: const Color(0xFF84C000)),
+                Container(height: 1, 
+                 color:Color.fromARGB(255, 202, 220, 162),
+                ),
                 const SizedBox(height: 14),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image(
-                      image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLZP8pzkS8sJ7LG_ci7YKM6yBAFRbQPXxISQ&s',
-                      ),
-                      width: 24,
-                      height: 24,
+                    Icon(
+                      Icons.description_outlined,
+                      size: 24,
+                      color:Color.fromARGB(255, 202, 220, 162),
                     ),
                     const SizedBox(width: 8),
                     Expanded(
@@ -135,7 +133,7 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                Container(height: 1, color: const Color(0xFF6BBA2E)),
+                Container(height: 1, color:Color.fromARGB(255, 202, 220, 162),),
                 SizedBox(height: 15),
                 Row(
                   children: [

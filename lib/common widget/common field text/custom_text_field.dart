@@ -37,15 +37,23 @@ class CustomTextField extends StatefulWidget {
     this.formFieldValidator,
     this.onTapClick = _defaultOnTap,
     this.elevation = 0,
+    this.iconsize = 20,
+    this.preIWeight = 1,
+    this.preIHeight = 16,
+    this.showContainer = false,
     this.contentPadding = const EdgeInsets.only(left: 6),
     this.shadowColor = const Color.fromARGB(255, 214, 211, 211),
   });
 
   final double? height;
+  final double preIWeight;
+  final double preIHeight;
+  final bool showContainer;
   final double borderRadius;
   final bool showObscure;
   final IconData? suffixIcon;
   final IconData? prefixIcon;
+  final double iconsize;
   final String? hinText;
   final double? hintFontSize;
   final FontWeight? hintFontWeight;
@@ -114,6 +122,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           cursorColor: widget.cursorColor,
           focusNode: widget.focusNode,
           onChanged: widget.onChanged,
+          onTap: widget.onTapClick,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: widget.formFieldValidator,
           style: TextStyle(color: Colors.black),
@@ -129,15 +138,26 @@ class _CustomTextFieldState extends State<CustomTextField> {
             contentPadding: widget.contentPadding,
 
             prefixIcon: widget.prefixIcon != null
-                ? Padding(
-                    padding: EdgeInsetsDirectional.symmetric(
-                      horizontal: 16,
-                      vertical: 14,
-                    ),
-                    child: Icon(
-                      widget.prefixIcon,
-                      color: widget.suffixIconColor,
-                    ),
+                ? Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Icon(
+                          widget.prefixIcon,
+                          color: widget.suffixIconColor,
+                          size: widget.iconsize,
+                        ),
+                      ),
+                      if (widget.showContainer) ...[
+                        Container(
+                          width: widget.preIWeight,
+                          height: widget.preIHeight,
+                          color: widget.suffixIconColor,
+                        ),
+                        const SizedBox(width: 8),
+                      ],
+                    ],
                   )
                 : null,
 
@@ -162,7 +182,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
                     ),
                   )
                 : (widget.suffixIcon != null
-                      ? Icon(widget.suffixIcon, color: widget.suffixIconColor)
+                      ? Icon(
+                          widget.suffixIcon,
+                          color: widget.suffixIconColor,
+                          size: widget.iconsize,
+                        )
                       : null),
 
             border: OutlineInputBorder(

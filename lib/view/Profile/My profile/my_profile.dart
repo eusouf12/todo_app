@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
+import 'package:my_task/view/Homepage/homeScreen/home_screen.dart';
 import 'package:my_task/view/Profile/My%20profile/MyprofileTab/myprofile_tab.dart';
-import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
@@ -12,11 +12,11 @@ class MyProfile extends StatefulWidget {
 
 class _MyProfileState extends State<MyProfile> {
 
- int idx = 3;
+ int idx = 2;
   final List<Widget> pages = [
-     MyProfileTab(),
+     HomeBtn(),
      AddTask(),
-      ProfilePage()
+     MyProfileTab(),
       ];
 
   @override
