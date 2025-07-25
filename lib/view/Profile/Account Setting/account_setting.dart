@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
+import 'package:my_task/view/Homepage/homeScreen/home_screen.dart';
 import 'package:my_task/view/Profile/Account%20Setting/AccountSettingTab/accountsetting_tab.dart';
-import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 
 class AccountSetting extends StatefulWidget {
   const AccountSetting({super.key});
@@ -13,9 +13,9 @@ class AccountSetting extends StatefulWidget {
 class _AccountSettingState extends State<AccountSetting> {
   int idx = 2;
   final List<Widget> pages = [
-    AccountSettingTab(),
+    HomeBtn(),
     AddTask(),
-    ProfilePage(),
+    AccountSettingTab()
     ];
 
   @override

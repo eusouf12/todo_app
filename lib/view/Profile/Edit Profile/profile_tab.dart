@@ -18,8 +18,8 @@ class _ProfileTabState extends State<ProfileTab> {
         automaticallyImplyLeading: false,
         title: ListTile(
           leading: GestureDetector(
-            onTap: (){
-              Navigator.pushNamed(context,'/profilepage');
+            onTap: () {
+              Navigator.pushNamed(context, '/profilepage');
             },
             child: Container(
               width: 40,
@@ -54,7 +54,7 @@ class _ProfileTabState extends State<ProfileTab> {
         ),
       ),
 
-            body: Padding(
+      body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
         child: Form(
           child: SingleChildScrollView(
@@ -62,16 +62,49 @@ class _ProfileTabState extends State<ProfileTab> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
                 SizedBox(
-                 height: 150,
-                 child: Image(
-                  image:NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSnKG_AOw7aZW4bQZ8ib5x7r4aNcVAKWggQ&s") ,
-                 
-                 ),
+                  height: 150,
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: ClipOval(
+                          child: Image(
+                            image: NetworkImage(
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSnKG_AOw7aZW4bQZ8ib5x7r4aNcVAKWggQ&s",
+                            ),
+                            fit: BoxFit.cover,
+                            width: 120,
+                            height: 120,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 20,
+                        right: 170,
+                        child: Container(
+                          height: 32,
+                          width: 32,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFFF7FFEF),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius: 4,
+                                offset: Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Icon(Icons.camera_alt_outlined,
+                          size: 20,
+                          color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 23,),
-               CustomText(
+                CustomText(
                   text: 'First Name',
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
@@ -85,7 +118,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your First Name' : null,
                 ),
-                SizedBox(height: 23,),
+                SizedBox(height: 23),
                 // lastname
                 CustomText(
                   text: 'Last Name',
@@ -102,7 +135,7 @@ class _ProfileTabState extends State<ProfileTab> {
                       a.isEmpty ? 'Enter Your Last Name' : null,
                 ),
 
-                SizedBox(height: 23,),
+                SizedBox(height: 23),
                 // Email
                 CustomText(
                   text: 'Email Address',
@@ -119,11 +152,11 @@ class _ProfileTabState extends State<ProfileTab> {
                       a.isEmpty ? 'Enter Your Email' : null,
                 ),
 
-                SizedBox(height: 23,),
+                SizedBox(height: 23),
                 // Address
                 CustomText(
                   text: 'Address',
-                 fontSize: 14,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   lineHeight: 20,
                   color: Colors.black,
@@ -136,7 +169,6 @@ class _ProfileTabState extends State<ProfileTab> {
                       a.isEmpty ? 'Enter Your Address' : null,
                 ),
 
-           
                 SizedBox(height: 23),
                 CustomBtn(
                   onTap: () {
