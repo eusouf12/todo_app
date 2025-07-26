@@ -16,6 +16,8 @@ import 'package:my_task/view/Verifymail_otp/Email%20Verify/email_verify.dart';
 import 'package:my_task/view/Verifymail_otp/Otp/otp_verify.dart';
 import 'package:my_task/view/Verifymail_otp/Set%20Pass/set_pass.dart';
 import 'package:my_task/view/sign%20up/sign_up.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
       debugShowCheckedModeBanner: false,
       title: "Todo App",
 
@@ -42,15 +45,14 @@ class MyApp extends StatelessWidget {
         '/addtask': (context) => const AddTask(),
         '/detailtask': (context) => const TaskDetails(),
         '/edittask': (context) => const TaskEdit(),
-        '/profilepage' :(context) => const ProfilePage(),
-        '/myprofile' :(context) => const MyProfile(),
-        '/accountsettings' :(context) => const AccountSetting(),
-        '/changepassword' :(context) => const ChangePassword(),
-        '/editprofile' :(context) => const EditProfile(),
-        '/termconditions' :(context)=> const TermCondition(),
-        '/privacy' :(context) => const Privacypage(),
-        '/help': (context)=> const HelpSupport(),
-
+        '/profilepage': (context) => const ProfilePage(),
+        '/myprofile': (context) => const MyProfile(),
+        '/accountsettings': (context) => const AccountSetting(),
+        '/changepassword': (context) => const ChangePassword(),
+        '/editprofile': (context) => const EditProfile(),
+        '/termconditions': (context) => const TermCondition(),
+        '/privacy': (context) => const Privacypage(),
+        '/help': (context) => const HelpSupport(),
       },
     );
   }

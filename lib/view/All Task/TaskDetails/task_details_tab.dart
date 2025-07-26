@@ -121,8 +121,7 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                           ),
                           SizedBox(height: 4),
                           CustomText(
-                            text:
-                                'Create a clean, responsive header section for the landing page. Include logo, navigation menu, search bar, and a primary call-to-action button. Ensure mobile responsiveness and use the brand green',
+                            text:'Create a clean, responsive header section for the landing page. Include logo, navigation menu, search bar, and a primary call-to-action button. Ensure mobile responsiveness and use the brand green',
                             color: Colors.grey,
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
