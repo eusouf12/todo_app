@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/gen/assets.gen.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
@@ -45,7 +46,7 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
           ),
 
           title: CustomText(
-            text: 'Task Details',
+            text: 'Tasks Details',
             fontWeight: FontWeight.w500,
             textAlign: TextAlign.center,
             fontSize: 16,
@@ -62,18 +63,16 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
             padding: EdgeInsets.symmetric(vertical: 24, horizontal: 20),
             child: Column(
               children: [
+              //task title icon & details
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //task title icon & details
-                    Icon(
-                      Icons.table_chart_outlined,
-                      size: 24,
-                      color:Color.fromARGB(255, 202, 220, 162),
+                  children: [                    
+                    Image
+                    (image: AssetImage(Assets.images.tasktitle.path),
+                    height: 14.67,
+                    width: 16,
                     ),
-
                     const SizedBox(width: 8),
-
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,20 +96,24 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 14),
+                
+                 //divider
+               const SizedBox(height: 14),
                 Container(height: 1, 
                  color:Color.fromARGB(255, 202, 220, 162),
                 ),
                 const SizedBox(height: 14),
+         
+              // task description icon&details
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.description_outlined,
-                      size: 24,
-                      color:Color.fromARGB(255, 202, 220, 162),
-                    ),
-                    const SizedBox(width: 8),
+                   Image
+                    (image: AssetImage(Assets.images.taskdes.path),
+                    height: 14.67,
+                    width: 16,
+                    ),  
+                   const SizedBox(width: 8),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/gen/assets.gen.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
 import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
-class ProfileTab extends StatefulWidget {
-  const ProfileTab({super.key});
+class EProfileTab extends StatefulWidget {
+  const EProfileTab({super.key});
 
   @override
-  State<ProfileTab> createState() => _ProfileTabState();
+  State<EProfileTab> createState() => _EProfileTabState();
 }
 
-class _ProfileTabState extends State<ProfileTab> {
+class _EProfileTabState extends State<EProfileTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,12 +70,10 @@ class _ProfileTabState extends State<ProfileTab> {
                       Center(
                         child: ClipOval(
                           child: Image(
-                            image: NetworkImage(
-                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtSnKG_AOw7aZW4bQZ8ib5x7r4aNcVAKWggQ&s",
-                            ),
+                            image: AssetImage(Assets.images.manicon.path),
                             fit: BoxFit.cover,
-                            width: 120,
                             height: 120,
+                            width: 120, 
                           ),
                         ),
                       ),
@@ -104,6 +103,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     ],
                   ),
                 ),
+              
                 CustomText(
                   text: 'First Name',
                   fontSize: 14,

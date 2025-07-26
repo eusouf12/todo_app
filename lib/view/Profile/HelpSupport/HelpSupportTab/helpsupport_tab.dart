@@ -87,7 +87,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
           children: [
             const CustomText(
               text: 'FAQs',
-              fontSize: 14,
+              fontSize: 16,
               bottom: 12,
               fontWeight: FontWeight.w500,
               color: Colors.black,
@@ -106,7 +106,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                       borderRadius: BorderRadius.circular(6),
                       boxShadow: [
                         BoxShadow(
-                          color: const Color.fromARGB(255, 234, 233, 233),
+                          color: const Color.fromARGB(255, 215, 213, 213),
                           blurRadius: 16,
                           spreadRadius: 0,
                           offset: const Offset(1, 1),
@@ -126,12 +126,10 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                           });
                         },
                         trailing: Icon(
-                          idx==index 
-                          ? Icons.keyboard_arrow_down
-                          : Icons.keyboard_arrow_right,
+                          idx == index
+                              ? Icons.keyboard_arrow_down
+                              : Icons.keyboard_arrow_right,
                           color: Color(0xFF6BBA2E),
-
-
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6),
@@ -150,7 +148,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                           Divider(color: Colors.black, height: 1),
                           CustomText(
                             text: faqList[index]["ans"]!,
-                            fontSize: 12,
+                            fontSize: 14,
                             color: Colors.black,
                             top: 10,
                           ),
@@ -164,7 +162,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
 
             CustomText(
               text: 'Need More Help?',
-              fontSize: 14,
+              fontSize: 16,
               bottom: 12,
               top: 12,
               fontWeight: FontWeight.w500,
@@ -179,7 +177,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color.fromARGB(255, 234, 233, 233),
+                    color: const Color.fromARGB(255, 215, 213, 213),
                     blurRadius: 16,
                     spreadRadius: 0,
                     offset: const Offset(1, 1),
@@ -210,14 +208,14 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                           children: [
                             CustomText(
                               text: "Mail Us",
-                              fontSize: 15,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
                             CustomText(
                               text: "(support@taskmanagerapp.com)",
                               color: Color(0xFF6BBA2E),
-                              fontSize: 14,
+                              fontSize: 12,
                             ),
                           ],
                         ),

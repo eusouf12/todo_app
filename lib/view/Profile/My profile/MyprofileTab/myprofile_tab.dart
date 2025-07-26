@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/gen/assets.gen.dart';
 import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
@@ -22,7 +23,8 @@ class _MyProfileTabState extends State<MyProfileTab> {
                 Navigator.pushNamed(context, '/profilepage');
               },
               child: Container(
-                width: 40, height: 40,
+                width: 40,
+                height: 40,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -87,6 +89,50 @@ class _MyProfileTabState extends State<MyProfileTab> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: Column(
           children: [
+            SizedBox(
+              height: 136,
+              child: Column(
+                children: [
+                  Center(
+                    child: Container(
+                      decoration: ShapeDecoration(
+                        shape: StarBorder.polygon(
+                          sides: 6,
+                          pointRounding: 0.3,
+                          side: BorderSide(
+                            color: Colors.black, 
+                            width: 1, 
+                          ),
+                        ),
+                      ),
+                      child: ClipPath(
+                        clipper: ShapeBorderClipper(
+                          shape: StarBorder.polygon(
+                            sides: 6,
+                            pointRounding: 0.3,
+                          ),
+                        ),
+                        child: Image.asset(
+                          Assets.images.profilepic.path,
+                          fit: BoxFit.contain,
+                          height: 88,
+                          width: 78,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: CustomText(
+                      text: 'Mojahid',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
             //profile
             CustomTextField(
               height: 52,

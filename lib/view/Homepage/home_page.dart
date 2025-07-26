@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/view/All%20Task/Add%20Task/add_task.dart';
 import 'package:my_task/view/Homepage/homeScreen/home_screen.dart';
-import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
+import 'package:my_task/view/Profile/Profile%20Page/Profilr%20Tab/tab_profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> pages = [
     HomeBtn(),
     AddTask(),
-    ProfilePage()
+    ProfilePageTab(),
     ];
 
   @override
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home'
+            label: 'My Task'
             ),
 
           BottomNavigationBarItem(

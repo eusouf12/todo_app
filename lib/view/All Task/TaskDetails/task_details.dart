@@ -34,7 +34,7 @@ class _TaskEditState extends State<TaskDetails> {
         unselectedItemColor: Colors.black,
 
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'My Task'),
           BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add Task'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
@@ -42,3 +42,5 @@ class _TaskEditState extends State<TaskDetails> {
     );
   }
 }
+
+

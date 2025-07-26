@@ -18,6 +18,9 @@ class $AssetsImagesGen {
   AssetGenImage get bgimageCard =>
       const AssetGenImage('assets/images/bgimageCard.png');
 
+  /// File path: assets/images/help.png
+  AssetGenImage get help => const AssetGenImage('assets/images/help.png');
+
   /// File path: assets/images/manicon.png
   AssetGenImage get manicon => const AssetGenImage('assets/images/manicon.png');
 
@@ -43,6 +46,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<AssetGenImage> get values => [
     bgimageCard,
+    help,
     manicon,
     profilecover,
     profilepic,
