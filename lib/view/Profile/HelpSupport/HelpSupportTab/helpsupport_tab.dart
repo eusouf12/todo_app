@@ -196,13 +196,14 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                     child: Icon(
                       Icons.support_agent_outlined,
                       color: Color(0xFF6BBA2E),
-                      size: 37,
+                      size: 36,
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: 10),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
                           children: [
@@ -213,9 +214,9 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
                               color: Colors.black,
                             ),
                             CustomText(
-                              text: "(support@taskmanagerapp.com)",
+                              text: "(support@taskmnagerapp.com)",
                               color: Color(0xFF6BBA2E),
-                              fontSize: 12,
+                              fontSize: 11,
                             ),
                           ],
                         ),

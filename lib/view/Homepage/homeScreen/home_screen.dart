@@ -28,7 +28,7 @@ class _HomeBtnState extends State<HomeBtn> {
   },
   {
     "title": "Prepare Terms & Privacy Pages",
-    "subtitle": "Create UI layouts for Terms & Conditions and Privacy Policy using scrollable content and soft brand styling."
+    "subtitle": "Create UI layouts for Terms & Conditions and Privacy Policy using  soft brand styling."
   },
   {
     "title": "Build Calendar View Layout",

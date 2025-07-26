@@ -12,14 +12,22 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int idx = 0;
-  final List<Widget> pages = [
-    HomeBtn(),
-    AddTask(),
-    ProfilePageTab(),
-    ];
+  final List<Widget> pages = [HomeBtn(), AddTask(), ProfilePageTab()];
 
   @override
   Widget build(BuildContext context) {
+    Widget navIcon(IconData icon, int index) {
+      bool isSelected = idx == index;
+      return Container(
+        padding: const EdgeInsets.all(6),
+        decoration: BoxDecoration(
+          color: isSelected ? const Color(0xFF7CB350) : Colors.transparent,
+          shape: BoxShape.circle,
+        ),
+        child: Icon(icon, color: isSelected ? Colors.white : Colors.black),
+      );
+    }
+
     return Scaffold(
       body: pages[idx],
 
@@ -30,24 +38,26 @@ class _HomePageState extends State<HomePage> {
             idx = index;
           });
         },
-        selectedItemColor: Color(0xFF7CB350),
-        unselectedItemColor: Colors.black,
-
-        items: const [
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        elevation: 8,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'My Task'
-            ),
-
+            icon: navIcon(Icons.home, 0),
+          label: idx == 0 ? '' : 'My Tasks',
+          ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add), 
-            label: 'Add Task'
-            ),
-
-          BottomNavigationBarItem( 
-            icon: Icon(Icons.person),
-             label: 'Profile'
-             ),
+            icon: navIcon(Icons.add, 1),
+             label: idx == 1 ? '' :'Add Task',
+          ),
+          BottomNavigationBarItem(
+            icon: navIcon(Icons.person, 2),
+             label: idx == 1 ? '' : 'Profile',
+          ),
         ],
       ),
     );

@@ -59,8 +59,8 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
         child: Card(
           child: Container(
-            height: 288,
-            padding: EdgeInsets.symmetric(vertical: 24, horizontal: 20),
+            height: 312,
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: Column(
               children: [
               //task title icon & details

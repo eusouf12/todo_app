@@ -17,10 +17,18 @@ import 'package:my_task/view/Verifymail_otp/Otp/otp_verify.dart';
 import 'package:my_task/view/Verifymail_otp/Set%20Pass/set_pass.dart';
 import 'package:my_task/view/sign%20up/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: !const bool.fromEnvironment(
+        'dart.vm.product',
+      ), // Disabled in release mode
+      builder: (context) => const MyApp(), // Your app widget
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,31 +36,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
-      debugShowCheckedModeBanner: false,
-      title: "Todo App",
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
+          debugShowCheckedModeBanner: false,
+          title: "Todo App",
 
-      initialRoute: '/',
+          initialRoute: '/',
 
-      routes: {
-        '/': (context) => const Login(),
-        '/signup': (context) => const SignUp(),
-        '/homepage': (context) => const HomePage(),
-        '/verifyemail': (context) => const EmailVerify(),
-        '/otpverify': (context) => const OtpVerify(),
-        '/setpassword': (context) => const SetPassWord(),
-        '/addtask': (context) => const AddTask(),
-        '/detailtask': (context) => const TaskDetails(),
-        '/edittask': (context) => const TaskEdit(),
-        '/profilepage': (context) => const ProfilePage(),
-        '/myprofile': (context) => const MyProfile(),
-        '/accountsettings': (context) => const AccountSetting(),
-        '/changepassword': (context) => const ChangePassword(),
-        '/editprofile': (context) => const EditProfile(),
-        '/termconditions': (context) => const TermCondition(),
-        '/privacy': (context) => const Privacypage(),
-        '/help': (context) => const HelpSupport(),
+          routes: {
+            '/': (context) => const Login(),
+            '/signup': (context) => const SignUp(),
+            '/homepage': (context) => const HomePage(),
+            '/verifyemail': (context) => const EmailVerify(),
+            '/otpverify': (context) => const OtpVerify(),
+            '/setpassword': (context) => const SetPassWord(),
+            '/addtask': (context) => const AddTask(),
+            '/detailtask': (context) => const TaskDetails(),
+            '/edittask': (context) => const TaskEdit(),
+            '/profilepage': (context) => const ProfilePage(),
+            '/myprofile': (context) => const MyProfile(),
+            '/accountsettings': (context) => const AccountSetting(),
+            '/changepassword': (context) => const ChangePassword(),
+            '/editprofile': (context) => const EditProfile(),
+            '/termconditions': (context) => const TermCondition(),
+            '/privacy': (context) => const Privacypage(),
+            '/help': (context) => const HelpSupport(),
+          },
+        );
       },
     );
   }

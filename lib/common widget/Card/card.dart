@@ -22,7 +22,7 @@ class _CustomCardState extends State<CustomCard> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        height: 141,
+        height: 150,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
           image: DecorationImage(
@@ -31,7 +31,7 @@ class _CustomCardState extends State<CustomCard> {
         ),
 
         child: Padding(
-          padding: const EdgeInsets.only(top: 20, left: 40, right: 40),
+          padding: const EdgeInsets.only(top: 18, left: 35, right: 35),
             child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
