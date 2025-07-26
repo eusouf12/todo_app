@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
+import 'package:my_task/gen/assets.gen.dart';
+
 
 class CustomCard extends StatefulWidget {
   final String title;
@@ -23,12 +25,9 @@ class _CustomCardState extends State<CustomCard> {
         height: 141,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          image: const DecorationImage(
-            image: NetworkImage(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbkECXtEG_6-RV7CSNgNoYUGZE-JCliYm9g&s',
-            ),
-            fit: BoxFit.cover,
-          ),
+          image: DecorationImage(
+            image: AssetImage(Assets.images.bgimageCard.path),
+            )
         ),
 
         child: Padding(
@@ -38,12 +37,10 @@ class _CustomCardState extends State<CustomCard> {
             children: [
               ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbkECXtEG_6-RV7CSNgNoYUGZE-JCliYm9g&s',
-                width: 26,
-                height: 26,
+              child: Image(
+                image:AssetImage(Assets.images.taskicon.path),
                 fit: BoxFit.cover,
-              ),
+                 ),
               ),
               CustomText(
               text: widget.title,
@@ -62,9 +59,8 @@ class _CustomCardState extends State<CustomCard> {
               ),
             ],
             ),
+            ),
           ),
-        ),
-
     );
   }
 }

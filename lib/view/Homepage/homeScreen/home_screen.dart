@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/gen/assets.gen.dart';
 import 'package:my_task/common%20widget/Card/card.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
 
@@ -47,7 +48,7 @@ class _HomeBtnState extends State<HomeBtn> {
               contentPadding: EdgeInsets.zero,
               leading: CircleAvatar(
                 radius: 18,
-                backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNbkECXtEG_6-RV7CSNgNoYUGZE-JCliYm9g&s'),
+                backgroundImage: AssetImage(Assets.images.manicon.path),
               ),
               title: const CustomText(
                 text: 'Hello Mojhahid',
@@ -69,16 +70,29 @@ class _HomeBtnState extends State<HomeBtn> {
 
 
       body:SingleChildScrollView(
-        child: Column(
-          children: List.generate(cardList.length, (index){
-            return Padding(
-              padding: const EdgeInsets.all(3.2),
-              child: CustomCard(
-                title: cardList[index]['title']!,
-                subtitle: cardList[index]['subtitle']!,
-              ),
-            );
-          }),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CustomText(
+               text: 'My Tasks',
+               fontSize: 18,
+               fontWeight: FontWeight.w500,
+               color: Colors.black,
+               bottom: 8,
+              ) ,
+              ...List.generate(cardList.length, (index){
+              return Padding(
+                padding: const EdgeInsets.all(0),
+                child: CustomCard(
+                  title: cardList[index]['title']!,
+                  subtitle: cardList[index]['subtitle']!,
+                ),
+              );
+            }),
+            ],
+          ),
         ),
       ),
 

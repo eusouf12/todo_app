@@ -65,12 +65,15 @@ class _TaskDetailsTabState extends State<TaskDetailsTab> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //task title icon & details
                     Icon(
                       Icons.table_chart_outlined,
                       size: 24,
                       color:Color.fromARGB(255, 202, 220, 162),
                     ),
+
                     const SizedBox(width: 8),
+
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
