@@ -10,6 +10,7 @@ import 'package:my_task/view/Profile/Edit%20Profile/edit_profile.dart';
 import 'package:my_task/view/Profile/HelpSupport/help_support.dart';
 import 'package:my_task/view/Profile/My%20profile/my_profile.dart';
 import 'package:my_task/view/Profile/Privacy/privacy.dart';
+import 'package:my_task/view/Profile/Profile%20Page/Profilr%20Tab/tab_profile.dart';
 import 'package:my_task/view/Profile/Profile%20Page/profile_page.dart';
 import 'package:my_task/view/Profile/TermCondition/term_condition.dart';
 import 'package:my_task/view/Verifymail_otp/Email%20Verify/email_verify.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
             '/termconditions': (context) => const TermCondition(),
             '/privacy': (context) => const Privacypage(),
             '/help': (context) => const HelpSupport(),
+            '/profiletab': (context) => const ProfilePageTab(),
           },
         );
       },

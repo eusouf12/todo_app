@@ -46,7 +46,7 @@ class _HelpsupportTabState extends State<HelpsupportTab> {
         title: ListTile(
           leading: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/profilepage');
+              Navigator.pushNamed(context, '/profiletab');
             },
             child: Container(
               width: 40,

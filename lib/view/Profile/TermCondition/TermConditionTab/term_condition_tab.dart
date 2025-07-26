@@ -17,7 +17,7 @@ class _TermsConditionTabState extends State<TermsConditionTab> {
         title: ListTile(
           leading: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/profilepage');
+              Navigator.pushNamed(context, '/profiletab');
             },
             child: Container(
               width: 40,

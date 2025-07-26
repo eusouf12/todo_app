@@ -19,7 +19,7 @@ class _AccountSettingTabState extends State<AccountSettingTab> {
         title: ListTile(
           leading: GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/profilepage');
+              Navigator.pushNamed(context, '/profiletab');
             },
             child: Container(
               width: 40,
