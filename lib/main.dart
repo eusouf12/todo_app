@@ -19,14 +19,18 @@ import 'package:my_task/view/sign%20up/sign_up.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+
+
 
 void main() {
   runApp(
     DevicePreview(
       enabled: !const bool.fromEnvironment(
         'dart.vm.product',
-      ), // Disabled in release mode
-      builder: (context) => const MyApp(), // Your app widget
+      ), 
+      builder: (context) => const MyApp(), 
     ),
   );
 }
@@ -41,7 +45,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
           theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
