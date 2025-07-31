@@ -20,7 +20,8 @@ class _MyProfileTabState extends State<MyProfileTab> {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/profiletab');
+                // Navigator.pushNamed(context, '/profiletab');
+                Navigator.pop(context);
               },
               child: Container(
                 width: 40,

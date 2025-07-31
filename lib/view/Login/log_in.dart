@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                   text: ' Don\'t have an account ?   ',
                     style: TextStyle(
                       fontSize: 14,
-                      
+                      color: Colors.black,
                     ),
                   children: [
                     TextSpan(

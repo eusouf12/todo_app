@@ -173,7 +173,7 @@ class _SignUpState extends State<SignUp> {
                 RichText(
                   text: TextSpan(
                     text: 'Already have an account ?   ',
-                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400),
+                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black),
                     children: [
                       TextSpan(
                         text: 'Log In',

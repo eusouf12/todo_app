@@ -19,7 +19,7 @@ class _AddTaskState extends State<AddTask> {
         title: ListTile(
           leading:GestureDetector(
              onTap: (){
-              Navigator.pushNamed(context,'/homepage');
+              Navigator.pop(context);
             },
             child: Container(
               width: 40,
