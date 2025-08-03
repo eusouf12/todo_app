@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:get/get.dart';
+import 'package:my_task/utilities/Network/base_client.dart';
+import 'package:my_task/utilities/Network/api_urls.dart';
 
 class SignUpController extends GetxController {
   var isLoading = false.obs;
@@ -24,7 +26,10 @@ class SignUpController extends GetxController {
       'address': address,
     };
     try{
-
+      var response = await BaseClient.postRequest(
+         api: ApiUrl.signUp,
+         body: body,
+        );
     } catch (e){
       Get.snackbar("Error", e.toString());
     }finally{
