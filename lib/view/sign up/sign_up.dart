@@ -5,6 +5,7 @@ import 'package:my_task/common%20widget/DividerOr/divider_or.dart';
 import 'package:my_task/common%20widget/common%20btn/custom_btn.dart';
 import 'package:my_task/common%20widget/common%20field%20text/custom_text_field.dart';
 import 'package:my_task/common%20widget/common%20text/custom_text.dart';
+import 'package:my_task/view/sign%20up/SignUpController/signup_controller.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -15,14 +16,42 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final RxBool isChecked = false.obs;
+  final SignUpController check = Get.put(SignUpController());
+  final formKey = GlobalKey<FormState>();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final addressController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  void submit() {
+    if (formKey.currentState!.validate()) {
+      check.signupUser(
+        firstName: firstNameController.text,
+        lastName: lastNameController.text,
+        email: emailController.text,
+        address: addressController.text,
+        password: passwordController.text,
+        confirmPassword: confirmPasswordController.text,
+      );
+      //   print("First Name: ${firstNameController.text}");
+      //   print(lastNameController.text);
+      //   print("Email: ${emailController.text}");
+      //   print("Address: ${addressController.text}");
+      //   print("Password: ${passwordController.text}");
+      //   print("Password: ${confirmPasswordController.text}");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 19),
         child: Form(
+          key: formKey,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +66,8 @@ class _SignUpState extends State<SignUp> {
                 ),
 
                 CustomText(
-                  text:'Join Task Manager today_organize better,work smarter and style in your control of your life.',
+                  text:
+                      'Join Task Manager today_organize better,work smarter and style in your control of your life.',
                   textAlign: TextAlign.start,
                   top: 8,
                   bottom: 12,
@@ -53,8 +83,10 @@ class _SignUpState extends State<SignUp> {
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
                   hinText: 'e.g. Kristin',
+                  textEditingController: firstNameController,
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your First Name' : null,
                 ),
@@ -69,7 +101,9 @@ class _SignUpState extends State<SignUp> {
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
+                  textEditingController: lastNameController,
                   hinText: 'e.g Cooper',
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your Last Name' : null,
@@ -85,7 +119,9 @@ class _SignUpState extends State<SignUp> {
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
+                  textEditingController: emailController,
                   hinText: 'kristin.cooper@gmail.com',
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your Email' : null,
@@ -94,14 +130,16 @@ class _SignUpState extends State<SignUp> {
                 // Address
                 CustomText(
                   text: 'Address',
-                 fontSize: 14,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   lineHeight: 20,
                   color: Colors.black,
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
+                  textEditingController: addressController,
                   hinText: 'e.g. 1234 Elm Street,Springfield, lL',
                   formFieldValidator: (a) =>
                       a.isEmpty ? 'Enter Your Address' : null,
@@ -110,14 +148,16 @@ class _SignUpState extends State<SignUp> {
                 //password
                 CustomText(
                   text: 'Password',
-                 fontSize: 14,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                   lineHeight: 20,
                   color: Colors.black,
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
+                  textEditingController: passwordController,
                   hinText: 'Enter Your Password',
                   isPassword: true,
                   showObscure: true,
@@ -134,7 +174,9 @@ class _SignUpState extends State<SignUp> {
                   top: 5,
                   bottom: 6,
                 ),
+
                 CustomTextField(
+                  textEditingController: confirmPasswordController,
                   hinText: 'Enter Your Confirm Password',
                   isPassword: true,
                   showObscure: true,
@@ -142,38 +184,49 @@ class _SignUpState extends State<SignUp> {
                       a.isEmpty ? 'Enter Your Confirm Password' : null,
                 ),
                 SizedBox(height: 6),
-               Obx(()=>Row(
-                  children: [
-                    Transform.scale(
-                      scale: 13.34/24.0,
-                      child: Checkbox(
-                        value: isChecked.value,
+
+                Obx(
+                  () => Row(
+                    children: [
+                      Transform.scale(
+                        scale: 13.34 / 24.0,
+                        child: Checkbox(
+                          visualDensity: VisualDensity(
+                            horizontal: -4,
+                            vertical: 0,
+                          ),
+                          value: isChecked.value,
                           onChanged: (val) => isChecked.value = val ?? false,
-                        side: const BorderSide(
-                          color: Color(0xFF4CAF50),
-                          width: 2,
+                          side: const BorderSide(
+                            color: Color(0xFF4CAF50),
+                            width: 2,
+                          ),
+                          activeColor: Color(0xFF4CAF50),
                         ),
-                        activeColor: Color(0xFF4CAF50),
-                        
                       ),
-                    ),
-                    CustomText(
-                      text:
-                          'I agree to the Teams & Conditions and Privacy Policy',
-                          fontSize: 12,
-                          left: 0,
-                          right: 0,
-                    ),
-                  ],
-               )
+                      CustomText(
+                        text:
+                            'I agree to the Teams & Conditions and Privacy Policy',
+                        fontSize: 12,
+                        left: 0,
+                        right: 0,
+                      ),
+                    ],
+                  ),
                 ),
+
                 SizedBox(height: 13),
                 DividerOr(),
                 SizedBox(height: 17),
+
                 RichText(
                   text: TextSpan(
                     text: 'Already have an account ?   ',
-                    style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
                     children: [
                       TextSpan(
                         text: 'Log In',
@@ -181,7 +234,7 @@ class _SignUpState extends State<SignUp> {
                           color: Color(0xFF84C000),
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          ),
+                        ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
                             Navigator.pushNamed(context, '/');

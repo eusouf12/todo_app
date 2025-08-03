@@ -12,7 +12,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int idx = 0;
-  final List<Widget> pages = [HomeBtn(), AddTask(), ProfilePageTab()];
+  final List<Widget> pages = [
+   HomeBtn(),
+   AddTask(), 
+   ProfilePageTab()
+   ];
 
   @override
   Widget build(BuildContext context) {
