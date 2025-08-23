@@ -58,8 +58,8 @@ class BaseClient {
     debugPrint('Request Body: ${jsonEncode(body)}');
 
     /// get x storage
-    final StorageService _storageService = Get.put(StorageService());
-    String? accessToken = _storageService.read<String>('accessToken');
+    final StorageService storageService = Get.put(StorageService());
+    String? accessToken = storageService.read<String>('accessToken');
 
     var headers = {
       'Accept': 'application/json',
